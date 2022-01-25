@@ -2,3 +2,4 @@ env
 app/app/__pycache__
 app/store/__pycache__
 app/store/migrations
+app/store/static
