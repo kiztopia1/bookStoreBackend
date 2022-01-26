@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Book
 # Create your views here.
 
@@ -16,3 +16,11 @@ def book_detail_view(request,id):
         'book': book
     }
     return render(request, 'store/book_details.html', context)
+
+def order_view(request, id):
+    print(request.user.id)
+    order = {
+        date:null,
+        userid
+    }
+    return redirect('/')
