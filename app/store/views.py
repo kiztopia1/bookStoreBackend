@@ -1,5 +1,6 @@
+from asyncio.windows_events import NULL
 from django.shortcuts import redirect, render
-from .models import Book
+from .models import Book, Transaction
 # Create your views here.
 
 def home_view(request):
@@ -19,8 +20,8 @@ def book_detail_view(request,id):
 
 def order_view(request, id):
     print(request.user.id)
-    order = {
-        date:null,
-        userid
-    }
+    book = Book.objects.get(id=id)
+    transaction = Transaction( bookId=book, userId=request.user )
+    print(transaction)
+    transaction.save()
     return redirect('/')

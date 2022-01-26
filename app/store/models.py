@@ -1,6 +1,8 @@
 from datetime import date
+from django.conf import settings
 from tkinter import image_names
 from django.db import models
+from django.utils.timezone import now
 
 # Create your models here.
 class Book(models.Model):
@@ -15,6 +17,6 @@ class Book(models.Model):
         return self.title
 
 class Transaction(models.Model):
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=now)
     bookId = models.ForeignKey(Book, on_delete=models.CASCADE)
-    userId = models.CharField(max_length=100)
+    userId = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
