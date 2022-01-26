@@ -1,0 +1,15 @@
+<div class="books">
+    <ul class="boolList">
+        {% for book in books %}
+        <li className='book' >
+            <a href='/book/' className='book-link'>
+            <img className='bookImg'  src=''></img>
+
+            <h4>{{book.name}}</h4>
+            <small className='flex'>by adam hittlor</small>
+            <span className='money-box'>{book.price}  birr</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
