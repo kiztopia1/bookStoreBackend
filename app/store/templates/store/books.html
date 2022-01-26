@@ -1,11 +1,12 @@
+{%load  static%}
 <div class="boolList">
     <ul class="row">
         {% for book in books %}
         <li className='book col-md-4' >
-            <a href='/book/' className='book-link'>
-            <img className='bookImg'  src=''></img>
+            <a href="/book/{{  book.id }}" className='book-link'>
+            <img className='bookImg'  src="{% static 'image/books/'%}{{book.image_name}}"></img>
 
-            <h4>{{book.name}}</h4>
+            <h4>{{book.title}}</h4>
             <small className='flex'>by adam hittlor</small>
             <span className='money-box'>{book.price}  birr</span>
             </a>
